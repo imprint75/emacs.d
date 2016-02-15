@@ -53,6 +53,8 @@
 (add-hook 'prog-mode-hook 'paredit-everywhere-mode)
 (add-hook 'css-mode-hook 'paredit-everywhere-mode)
 (after-load 'paredit-everywhere
-  (define-key paredit-everywhere-mode-map [remap kill-sentence] 'paredit-kill))
+  (define-key paredit-everywhere-mode-map [remap kill-sentence] 'paredit-kill)
+  ;; kill this binding.  It's messing up python-mode forward-paragraph binding
+  (define-key paredit-everywhere-mode-map (kbd "M-}") nil))
 
 (provide 'init-paredit)
