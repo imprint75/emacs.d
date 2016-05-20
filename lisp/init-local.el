@@ -13,6 +13,7 @@
 (global-set-key (kbd "<f7>") 'bury-buffer)
 (global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
 (global-set-key (kbd "<f1>") 'other-window)
+(global-set-key (kbd "<f5>") (lambda () (interactive) (other-window -1)))
 ;; navigate windows
 (global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
