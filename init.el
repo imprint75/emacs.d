@@ -103,6 +103,7 @@
 (require 'init-rails)
 (require 'init-sql)
 (require 'init-yasnippet)
+(require 'init-wrap-region)
 
 (require 'init-paredit)
 (require 'init-lisp)
