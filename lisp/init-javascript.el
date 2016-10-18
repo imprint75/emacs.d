@@ -97,5 +97,7 @@
     (add-hook 'skewer-mode-hook
               (lambda () (inferior-js-keys-mode -1)))))
 
+(add-to-list 'auto-mode-alist '("\\.jsx?$" . web-mode))
 
 (provide 'init-javascript)
+;;; init-javascript ends here
