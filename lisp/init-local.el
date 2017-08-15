@@ -1,10 +1,16 @@
 ;;; package --- local init stuff
+;;; Commentary:
+;;; Code:
 (setq save-interprogram-paste-before-kill nil)
 (load-theme 'sanityinc-tomorrow-night t)
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
 ;; use hippie-expand instead of dabbrev
 (global-set-key (kbd "M-/") 'hippie-expand)
 ;; map fn keys to some common stuff
+(global-set-key (kbd "<mouse-4>") 'magit-status)
+(global-set-key (kbd "<mouse-3>") 'helm-ag-project-root)
+(global-set-key (kbd "<f15>") 'helm-ag-project-root)
+(global-set-key (kbd "<f13>") 'magit-status)
 (global-set-key (kbd "<f12>") 'buffer-menu)
 (global-set-key (kbd "<f11>") 'switch-to-buffer)
 (global-set-key (kbd "<f10>") 'kill-buffer)
@@ -94,3 +100,4 @@
 (global-set-key (kbd "C-c C-p") 'whole-line-or-region-kill-ring-save)
 
 (provide 'init-local)
+;;; init-local.el ends here
