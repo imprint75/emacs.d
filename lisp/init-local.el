@@ -42,8 +42,8 @@
 (global-set-key (kbd "<M-right>") 'forward-word)
 (global-set-key (kbd "<M-left>") 'backward-word)
 
-(require 'magit-gitflow)
-(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
+;; (require 'magit-gitflow)
+;; (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
 ;; magit pretty please
 ;; (setq magit-emacsclient-executable
