@@ -1,6 +1,7 @@
 
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
+;;; Code:
 
 (let ((minver "23.3"))
   (when (version<= emacs-version "23.1")
@@ -66,7 +67,8 @@
 (require 'init-recentf)
 (require 'init-ido)
 (require 'init-hippie-expand)
-(require 'init-auto-complete)
+(require 'init-company)
+;; (require 'init-auto-complete)
 (require 'init-windows)
 (require 'init-sessions)
 (require 'init-fonts)
@@ -89,14 +91,15 @@
 (require 'init-csv)
 (require 'init-erlang)
 (require 'init-javascript)
+(require 'init-typescript)
 (require 'init-php)
-(require 'init-org)
+;; (require 'init-org)
 (require 'init-nxml)
 (require 'init-html)
 (require 'init-css)
 (require 'init-haml)
 (require 'init-python-mode)
-(require 'init-elpy)
+;; (require 'init-elpy)
 (require 'init-haskell)
 (require 'init-elm)
 (require 'init-ruby-mode)
@@ -106,7 +109,7 @@
 (require 'init-wrap-region)
 
 (require 'init-paredit)
-(require 'init-lisp)
+;; (require 'init-lisp)
 (require 'init-slime)
 (unless (version<= emacs-version "24.2")
   (require 'init-clojure)
@@ -171,3 +174,4 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
+;;; init ends here
