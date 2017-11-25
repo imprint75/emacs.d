@@ -1,6 +1,8 @@
 ;;; package --- Summary
 ;;; Commentary:
 ;;; Code:
+
+(require 'tide)
 (defun setup-tide-mode ()
   (interactive)
   (tide-setup)
