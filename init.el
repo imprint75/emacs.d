@@ -72,7 +72,6 @@
 (require 'init-sessions)
 (require 'init-fonts)
 (require 'init-mmm)
-(require 'init-projectile)
 
 (require 'init-editing-utils)
 (require 'init-whitespace)
@@ -82,8 +81,9 @@
 (require 'init-git)
 (require 'init-github)
 
+(require 'init-projectile)
+
 (require 'init-compile)
-(require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)
 (require 'init-csv)
@@ -109,9 +109,8 @@
 (require 'init-paredit)
 ;; (require 'init-lisp)
 (require 'init-slime)
-(unless (version<= emacs-version "24.2")
-  (require 'init-clojure)
-  (require 'init-clojure-cider))
+(require 'init-clojure)
+(require 'init-clojure-cider)
 (require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
@@ -119,6 +118,7 @@
 
 (require 'init-misc)
 
+(require 'init-folding)
 (require 'init-dash)
 (require 'init-ledger)
 ;; Extra packages which don't require any configuration
@@ -129,7 +129,7 @@
 (require-package 'dsvn)
 (when *is-a-mac*
   (require-package 'osx-location))
-(require-package 'regex-tool)
+(maybe-require-package 'regex-tool)
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
@@ -149,8 +149,6 @@
 ;;----------------------------------------------------------------------------
 ;; Allow users to provide an optional "init-local" containing personal settings
 ;;----------------------------------------------------------------------------
-(when (file-exists-p (expand-file-name "init-local.el" user-emacs-directory))
-  (error "Please move init-local.el to ~/.emacs.d/lisp"))
 (require 'init-local nil t)
 
 (require 'init-sr-speedbar)
@@ -160,10 +158,9 @@
 ;;----------------------------------------------------------------------------
 (require 'init-locales)
 
-(add-hook 'after-init-hook
-          (lambda ()
-            (message "init completed in %.2fms"
-                     (sanityinc/time-subtract-millis after-init-time before-init-time))))
+
+(when (maybe-require-package 'uptimes)
+  (add-hook 'after-init-hook (lambda () (require 'uptimes))))
 
 
 (provide 'init)
@@ -172,4 +169,3 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init ends here
