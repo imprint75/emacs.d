@@ -84,6 +84,8 @@
 (require 'init-projectile)
 
 (require 'init-compile)
+
+;;(require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)
 (require 'init-csv)
@@ -96,6 +98,7 @@
 (require 'init-html)
 (require 'init-css)
 (require 'init-haml)
+(require 'init-http)
 (require 'init-python-mode)
 ;; (require 'init-elpy)
 (require 'init-haskell)
@@ -103,8 +106,11 @@
 (require 'init-ruby-mode)
 (require 'init-rails)
 (require 'init-sql)
-(require 'init-yasnippet)
-(require 'init-wrap-region)
+(require 'init-rust)
+(require 'init-toml)
+(require 'init-yaml)
+(require 'init-docker)
+(maybe-require-package 'terraform-mode)
 
 (require 'init-paredit)
 ;; (require 'init-lisp)

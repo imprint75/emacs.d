@@ -1,10 +1,5 @@
-;;; package --- Summary
-
-;;; Commentary:
 ;; WAITING: haskell-mode sets tags-table-list globally, breaks tags-completion-at-point-function
 ;; TODO Default sort order should place [a-z] before punctuation
-
-;;; Code:
 
 (setq tab-always-indent 'complete)
 (add-to-list 'completion-styles 'initials t)
@@ -26,9 +21,8 @@
 
   (defun sanityinc/local-push-company-backend (backend)
     "Add BACKEND to a buffer-local version of `company-backends'."
-    (set (make-local-variable 'company-backends)
-         (append (list backend) company-backends))))
-
+    (make-local-variable 'company-backends)
+    (push backend company-backends)))
 
 ;; Suspend page-break-lines-mode while company menu is active
 ;; (see https://github.com/company-mode/company-mode/issues/416)
@@ -52,5 +46,3 @@
 
 
 (provide 'init-company)
-
-;;; init-company.el ends here
