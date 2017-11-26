@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-sr-speedbar)
+
 (setq save-interprogram-paste-before-kill nil)
 
 (load-theme 'sanityinc-tomorrow-night t)
