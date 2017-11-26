@@ -1,11 +1,16 @@
 ;;; package --- local init stuff
 ;;; Commentary:
 ;;; Code:
+
 (setq save-interprogram-paste-before-kill nil)
+
 (load-theme 'sanityinc-tomorrow-night t)
+
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
+
 ;; use hippie-expand instead of dabbrev
 (global-set-key (kbd "M-/") 'hippie-expand)
+
 ;; map fn keys to some common stuff
 (global-set-key (kbd "<mouse-4>") 'magit-status)
 (global-set-key (kbd "<mouse-3>") 'helm-ag-project-root)
@@ -19,16 +24,20 @@
 (global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
 (global-set-key (kbd "<f1>") 'other-window)
 (global-set-key (kbd "<f5>") (lambda () (interactive) (other-window -1)))
+
 ;; navigate windows
 (global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 (global-set-key (kbd "C-x <left>") 'windmove-left)
+
 ;; enable line numbers by default and add a space after the number
 (global-linum-mode)
 (setq linum-format "%d ")
+
 ;; set the window title to be filename and path
 (setq frame-title-format '("Emacs @ " ": %b %+%+ %f"))
+
 ;; don't do the auto centered cursor thing where the screen jumps around
 (setq scroll-step 1)
 (setq scroll-conservatively 1)
@@ -48,24 +57,6 @@
 ;; magit pretty please
 ;; (setq magit-emacsclient-executable
 ;;       (shell-quote-argument magit-emacsclient-executable))
-
-;;(setq smtpmail-stream-type 'ssl)
-;;(setq smtpmail-smtp-server "smtp.gmail.com")
-;;(setq smtpmail-smtp-service 465)
-;;;
-;; (setq send-mail-function 'smtpmail-send-it
-;;  message-send-mail-function 'smtpmail-send-it
-;;  user-mail-address "MYEMAILADDRESS"
-;;  smtpmail-starttls-credentials '(("smtp.gmail.com" "587" nil nil))
-;;  smtpmail-auth-credentials  (expand-file-name "~/.authinfo")
-;;  smtpmail-default-smtp-server "smtp.gmail.com"
-;;  smtpmail-smtp-server "smtp.gmail.com"
-;;  smtpmail-smtp-service 587
-;;  smtpmail-debug-info t
-;;  starttls-extra-arguments nil
-;;  starttls-gnutls-program "/usr/local/bin/gnutls-cli"
-;;  starttls-extra-arguments nil
-;;  starttls-use-gnutls t)
 
 (defun move-line-up ()
   (interactive)
@@ -98,6 +89,9 @@
                   (line-end-position)))
 
 (global-set-key (kbd "C-c C-p") 'whole-line-or-region-kill-ring-save)
+
+(after-load 'paredit-everywhere
+  (define-key paredit-everywhere-mode-map (kbd "M-}") nil))
 
 (provide 'init-local)
 ;;; init-local.el ends here
