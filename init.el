@@ -61,7 +61,6 @@
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-flycheck)
-(require 'init-helm)
 
 (require 'init-recentf)
 (require 'init-smex)
@@ -84,7 +83,6 @@
 (require 'init-projectile)
 
 (require 'init-compile)
-
 ;;(require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)
@@ -93,14 +91,13 @@
 (require 'init-javascript)
 (require 'init-typescript)
 (require 'init-php)
-;; (require 'init-org)
+(require 'init-org)
 (require 'init-nxml)
 (require 'init-html)
 (require 'init-css)
 (require 'init-haml)
 (require 'init-http)
 (require 'init-python-mode)
-;; (require 'init-elpy)
 (require 'init-haskell)
 (require 'init-elm)
 (require 'init-ruby-mode)
@@ -113,7 +110,7 @@
 (maybe-require-package 'terraform-mode)
 
 (require 'init-paredit)
-;; (require 'init-lisp)
+(require 'init-lisp)
 (require 'init-slime)
 (require 'init-clojure)
 (require 'init-clojure-cider)
@@ -156,6 +153,7 @@
 ;; Allow users to provide an optional "init-local" containing personal settings
 ;;----------------------------------------------------------------------------
 (require 'init-local nil t)
+
 
 ;;----------------------------------------------------------------------------
 ;; Locales (setting them earlier in this file doesn't work in X)

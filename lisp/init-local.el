@@ -2,7 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-helm)
 (require 'init-sr-speedbar)
+;; (require 'init-elpy)
 
 (setq save-interprogram-paste-before-kill nil)
 
